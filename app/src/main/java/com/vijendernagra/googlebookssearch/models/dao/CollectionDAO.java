@@ -78,12 +78,10 @@ public class CollectionDAO implements CollectionMVP.Model {
         int result = PERSIST_PROBLEM;
 
         try {
-            this.realm.executeTransaction(realm -> {
-                realm.where(RealmBook.class)
-                        .equalTo(RealmBook.ID, realmBook.getId())
-                        .findAll()
-                        .deleteAllFromRealm();
-            });
+            this.realm.executeTransaction(realm -> realm.where(RealmBook.class)
+                    .equalTo(RealmBook.ID, realmBook.getId())
+                    .findAll()
+                    .deleteAllFromRealm());
 
             result = PERSIST_OK;
         } catch (Exception e) {
