@@ -27,9 +27,8 @@ public class GoogleBooksService implements GoogleBookMVP.Model {
                 .build();
 
         GoogleBooksAPI googleBooksService = retrofit.create(GoogleBooksAPI.class);
-        Observable<SearchResult> searchResultObservable = googleBooksService.searchBook(query);
 
-        return searchResultObservable;
+        return googleBooksService.searchBook(query);
     }
 
 }
