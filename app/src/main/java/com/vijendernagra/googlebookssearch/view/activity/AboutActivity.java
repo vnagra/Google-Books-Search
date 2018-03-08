@@ -29,7 +29,7 @@ public class AboutActivity extends AppCompatActivity {
         String[] contentArray = getResources().getStringArray(R.array.about_content_array);
         StringBuilder stringBuilder = new StringBuilder();
         for (String item : contentArray) {
-            stringBuilder.append("\n" + item);
+            stringBuilder.append("\n").append(item);
         }
         this.binding.tvContent.setText(stringBuilder.toString());
     }
